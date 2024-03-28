@@ -11,10 +11,11 @@ Still, for what it's worth, there is a directory-level division between the logi
 
 ## Contributions
 
-Anyone who is competent in Next.js and the other related technologies used in this repository (e.g. Tailwind), is welcome to introduce meaningful changes. Since the content is tightly coupled, any changes to the content are also (sadly) required to be done as a pull request.
+If you're looking at this, chances are you wish to make changes to the Confluence website. Also, it is perhaps likely that the nature of the changes that you wish to make is "content-oriented", that is to say, you wish to provide accurate content for the website. Here are the steps to do just that:
 
-Direct merging to `main` is restricted, as it is a protected branch.
-
-Make sure to use the "Conventional Commits" commit-messages convention, or you won't be able to commit (`husky` will prevent you).
-
-When a PR is merged, the changes should be live in a couple of minutes. Vercel takes care of Continuous Deployment.
+1. Clone this repository (assuming you are a contributor). You may be prompted to login.
+2. Make the desired changes locally by editing the `src/content/constants.ts` file appropriately.
+3. If some images are to be added, place them in the appropriate directory and then run `./minify-images.bash` from Git Bash (in the root directory of this project). This will minify the images, making the website faster. Do not skip the minification.
+4. Commit your changes in this format: `content: <message>`. If your commit message is not in this format, it will not be accepted by Husky. Sample commit message: `content: add information about artists`. (Bonus: Write messages in the imperative case, i.e. "add" instead of "added" in the aforementioned example. This is considered a good practice.)
+5. Push your changes back using `git push origin main`. If the push is not successfull, pull changes into your local repo using `git pull origin main`, and then try pushing back again. (Resolve any merge conflicts if there are some, although that is not very likely for this project.)
+6. Relax and rejoice.
